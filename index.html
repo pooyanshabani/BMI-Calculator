@@ -1,0 +1,347 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Body Mass Index Calculator | U-Fit</title>
+	<meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://u-fitpro.com/bmi/" />
+	<meta property="og:locale" content="fa_IR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Body Mass Index - u-fitpro" />
+    <meta property="og:description" content="با استفاده از محاسبه شاخص توده بدنی (BM) وزن خود را نسبت به قد خود بهتر درک کنید. در حالی که BMI تنها عامل تعیین کننده وزن سالم نیست، یک نقطه شروع ..." />
+    <meta property="og:url" content="https://u-fitpro.com/bmi/" />
+    <meta property="og:site_name" content="محاسبه شاخص توده بدنی (BM)" />
+    <meta property="article:publisher" content="https://u-fitpro.com/" />
+    <meta property="article:modified_time" content="2024-11-02T09:00:00+03:30" />
+    <meta property="og:image" content="images/u-fitpro-bmi.jpg" />
+    <meta property="og:image:width" content="780" />
+    <meta property="og:image:height" content="430" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary" />
+
+
+<link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://u-fitpro.com/wp-content/uploads/2024/01/cropped-u-fitpro-favicon-512-32x32.png"
+    />
+    <link rel="stylesheet" href="assets/style.css?v=1.0" />
+    <link rel="stylesheet" href="assets/fonts.css" />
+
+
+<style>
+  body { background: #efefef; }
+  .container { margin: 150px auto; }
+  #demo { height: 300px; width: 300px; margin-top: -45px;}
+  #preview-textfield{
+  
+  font-size: 2em; font-weight: bold;
+  color: white; font-family: 'iranyekan', sans-serif;
+  display: none;
+}
+  </style>
+</head>
+
+<body>
+	
+
+
+<div class="wrapper">
+      <div class="hero_wrap">
+        <div class="hero_intro">
+			<a href="https://u-fitpro.com/" class="wd-logo wd-main-logo" rel="home">
+				<img src="https://u-fitpro.com/wp-content/uploads/2024/01/ufit-dark.svg" alt="" width="100" height="64" />
+			</a>
+          <h1>Body Mass<br />Index Calculator</h1>
+          <p>
+            با استفاده از محاسبه شاخص توده بدنی (BM) وزن خود را نسبت به قد خود بهتر درک کنید. در حالی که BMI تنها عامل تعیین کننده وزن سالم نیست، یک نقطه شروع ارزشمند برای ارزیابی سلامت و رفاه کلی شما ارائه می دهد.
+          </p>
+        </div>
+		
+  		
+		  
+		  
+        <div class="bmi_calculator">
+          <form action="calculator.js" method="post">
+            <h3>مشخصات خود را در زیر وارد کنید</h3>
+
+            <div class="stats">
+              <div>
+                <label for="height">قد</label>
+                <input
+                  type="number" 
+				  pattern="[0-9]*" 
+				  inputmode="decimal"
+                  name="height"
+                  id="height"
+                  placeholder="0"
+				  max="280"
+				  maxlength="4"
+				  size="4"
+				  step="0.5"
+                />
+                <p class="cm">cm</p>
+				<p class="plus">+</p>
+				<p class="minus">-</p>
+              </div>
+              <div>
+                <label for="weight">وزن</label>
+                <input
+                  type="number" 
+				  pattern="[0-9]*" 
+				  inputmode="numeric"
+                  name="weight"
+                  id="weight"
+                  placeholder="0"
+				  max="600"
+				  maxlength="4"
+				  size="4"
+				  step="0.5"
+                />
+                <p class="kg">kg</p>
+				<p class="plus">+</p>
+				<p class="minus">-</p>
+              </div>
+            </div>
+            <div class="stats_imperial">
+              <div>
+                <label for="height_ft">Height</label>
+                <input
+                  type="number"
+                  name="height_ft"
+                  id="height_ft"
+                  placeholder="0"
+                />
+                <p class="ft">ft</p>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  name="height_in"
+                  id="height_in"
+                  placeholder="0"
+                />
+                <p class="in">in</p>
+              </div>
+              <div>
+                <label for="weight">Weight</label>
+                <input
+                  type="number"
+                  name="weight_st"
+                  id="weight_st"
+                  placeholder="0"
+                />
+                <p class="st">st</p>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  name="weight_lbs"
+                  id="weight_lbs"
+                  placeholder="0"
+                />
+                <p class="lbs">lbs</p>
+              </div>
+            </div>
+          </form>
+          <div class="result_output" id="result_outputbg">
+            <div class="wrap_result">
+              <p id="welcome">خوش آمدید</p>
+			    
+              <p id="top_bmi"></p>
+              <p id="best_bmi">محدوده BMI سالم: 18.5 الی 25</p>
+              
+              <p id="result"></p>
+              <p id="welcome_more">
+                قد و وزن خود را وارد کنید و نتیجه BMI را درمشاهده کنید.
+              </p>
+			  <div id="preview-textfield"></div>
+            </div>
+            <p id="ideal_bmi_info"></p>
+          </div>
+
+
+		  	<div id="w_canvas">
+		  		<canvas id="demo"></canvas>
+        	</div>
+
+        </div>
+      </div>
+      
+      <div class="bmi_components_wrap">
+        <div class="component">
+          <img src="./images/icon-eating.svg" alt="" height="64" width="64" />
+          <h3>تغذیه سالم</h3>
+          <p>
+            تغذیه سالم باعث کنترل وزن، پیشگیری از بیماری، هضم بهتر، ایمنی، وضوح ذهنی و خلق و خو می شود.
+          </p>
+        </div>
+        <div class="component">
+          <img src="./images/icon-exercise.svg" alt="" height="64" width="64" />
+          <h3>ورزش منظم</h3>
+          <p>
+            ورزش تناسب اندام را بهبود می بخشد، به کنترل وزن کمک می کند، خلق و خو را بالا می برد و خطر بیماری را کاهش می دهد، سلامتی و طول عمر را تقویت می کند.
+          </p>
+        </div>
+        <div class="component">
+          <img src="./images/icon-sleep.svg" alt="" height="64" width="64" />
+          <h3>خواب کافی</h3>
+          <p>
+            خواب وضوح ذهنی، ثبات عاطفی و سلامت جسمی را افزایش می‌دهد و به بازسازی کلی و جوان‌سازی کمک می‌کند.
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+
+<script src="dist/gauge.js"></script>
+
+<script>
+
+  var opts = {
+   angle: -0.1,
+   lineWidth: 0.2,
+   radiusScale: 0.6,
+   pointer: {
+      length: 0.5,
+      strokeWidth: 0.02,
+      color: '#000000'
+   },
+   staticLabels: {
+      font: "10px sans-serif",
+      labels: [16, 17, 18.5, 25, 30, 35, 40],
+      fractionDigits: 0
+   },
+   staticZones: [
+      {strokeStyle: "#bc2020", min: 0, max: 16},
+      {strokeStyle: "#d46c13", min: 16, max: 17},
+      {strokeStyle: "#ffe400", min: 17, max: 18.5},
+      {strokeStyle: "#008137", min: 18.5, max: 25},
+      {strokeStyle: "#ffe400", min: 25, max: 30},
+      {strokeStyle: "#d46c13", min: 30, max: 35},
+      {strokeStyle: "#b91f1f", min: 35, max: 40},
+      {strokeStyle: "#8a0101", min: 40, max: 45},
+   ],
+   limitMax: false,
+   limitMin: false,
+   highDpiSupport: true,
+   
+};
+
+var target = document.getElementById('demo'); // your canvas element
+var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+document.getElementById("preview-textfield").className = "preview-textfield";
+gauge.setTextField(document.getElementById("preview-textfield"));
+gauge.maxValue = 45; // set max gauge value
+gauge.setMinValue(0);  // set min value
+gauge.set(0);
+
+
+// Function to update the gauge value
+function updateGauge() {
+   let height = document.getElementById('height').value;
+   let weight = document.getElementById('weight').value;
+   
+   if (height>0 && weight>0) {
+      var meters = height / 100;
+      var mainbmi = weight / (meters * meters);
+      var bmi = mainbmi;
+	  var minBMI = 18.5 * (meters*meters);
+      var maxBMI = 24.9 * (meters*meters);
+	  
+      if (mainbmi > 45) {
+         bmi = 45;
+      } else if (mainbmi < 0) {
+         bmi = 0;
+      }
+
+	  
+
+      rminBMI = Math.round(minBMI * 100)/100;
+      rmaxBMI = Math.round(maxBMI * 100)/100;
+      rmainbmi = Math.round(mainbmi * 100)/100;
+
+	  if (rmainbmi < 16) {	  
+		  rcalgw = 'شما باید ' + Math.round( (rminBMI - weight) * 10)/10 + ' کیلوگرم به وزن خود اضافه کنید.';
+		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 4 4) 0%, rgb(81 1 1) 100%)";
+	  } else if (rmainbmi >= 16 && rmainbmi < 18.5) {
+		  rcalgw = 'شما باید ' + Math.round( (rminBMI - weight) * 10)/10 + ' کیلوگرم به وزن خود اضافه کنید.';
+		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 151 4) 0%, rgb(111 48 0) 100%)";
+		  
+	  } else if (rmainbmi >= 25 && rmainbmi < 35) {
+		  rcalgw = 'شما باید ' + Math.round( (weight - rmaxBMI) * 10)/10 + '  کیلوگرم وزن خود را کاهش دهید.';
+		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 151 4) 0%, rgb(111 48 0) 100%)";
+		  
+	  } else if (rmainbmi >= 35) {
+		  rcalgw = 'شما باید ' + Math.round( (weight - rmaxBMI) * 10)/10 + '  کیلوگرم وزن خود را کاهش دهید.';
+		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 4 4) 0%, rgb(81 1 1) 100%)";
+		  
+	  } else {
+		  rcalgw = 'نسبت وزن و قد شما در محدوده سالم قرار دارد.';
+		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(9, 149, 0) 0%, rgb(0, 108, 109) 100%)";
+	  
+	  }
+
+	  document.getElementById("preview-textfield").style.display = 'none';
+      document.getElementById("w_canvas").style.display = 'flex';
+	  top_bmi.innerText = `نتیجه BMI شما: ${rmainbmi}`;
+	  best_bmi.innerHTML = 'محدوده BMI سالم: 18.5 الی 25 <br>' + 'وزن سالم برای قد شما بین '  + rminBMI + ' و ' + rmaxBMI + ' کیلوگرم می باشد. <br> ' + rcalgw;
+	
+	  gauge.set(bmi); // set actual value
+	  document.getElementById("welcome").style.display = 'none';
+	  document.getElementById("top_bmi").style.display = 'block';
+	  document.getElementById("welcome_more").style.display = 'none';
+	  document.getElementById("best_bmi").style.display = 'block';
+	  
+   } else {
+	
+	    gauge.set(0);
+   		document.getElementById("top_bmi").style.display = 'none';
+   		document.getElementById("welcome_more").style.display = 'block';
+		   document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(4, 195, 196) 0%, rgb(0, 108, 109) 100%)";
+   		document.getElementById("best_bmi").style.display = 'none';
+		
+   }
+
+}
+
+// Add event listener to the input elements
+document.getElementById('weight').addEventListener('input', updateGauge);
+document.getElementById('height').addEventListener('input', updateGauge);
+
+document.getElementById('weight').addEventListener('focus', function() { this.select(); });
+document.getElementById('height').addEventListener('focus', function() { this.select(); });
+
+
+
+
+
+// Functionality for '+' and '-' buttons
+document.querySelectorAll('.plus').forEach(button => {
+  button.addEventListener('click', function() {
+    const parentInput = this.closest('div').querySelector('input');
+    let currentValue = parseFloat(parentInput.value) || 0; // Default to 0 if empty
+    parentInput.value = Math.min(currentValue + 1, parentInput.max); // Increment, but respect max value
+	updateGauge();	
+  });
+});
+
+document.querySelectorAll('.minus').forEach(button => {
+  button.addEventListener('click', function() {
+    const parentInput = this.closest('div').querySelector('input');
+    let currentValue = parseFloat(parentInput.value) || 0; // Default to 0 if empty
+    parentInput.value = Math.max(currentValue - 1, 0); // Decrement, but respect minimum value of 0
+	updateGauge();
+  });
+});
+	
+</script>
+
+</body>
+</html>
