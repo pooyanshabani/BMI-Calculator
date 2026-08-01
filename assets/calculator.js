@@ -54,13 +54,13 @@ function calculateBMI_Metric() {
         resultElement.innerText = bmi.toFixed(1);
 		
         if(bmi >= 18.5 && bmi <= 24.9){
-            const idealM = 'BMI شما نشان می دهد که وزن مناسبی دارید.'
-            idealBMI.innerText = `${idealM} وزن ایده آل شما بین ${minBMI.toFixed(1)}kgs. - ${maxBMI.toFixed(1)}kgs باید باشد.`
+            const idealM = 'Your BMI indicates that you are at a healthy weight.'
+			idealBMI.innerText = `${idealM} Your ideal weight should be between ${minBMI.toFixed(1)}kgs. - ${maxBMI.toFixed(1)}kgs.`
 			document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, #099500 0%, #006c6d 100%)";
         }
         else {
-            const idealMNot = 'BMI شما نشان می دهد که وزن مناسبی ندارید.'
-            idealBMI.innerText = `${idealMNot} وزن ایده آل شما بین ${minBMI.toFixed(1)}kgs. - ${maxBMI.toFixed(1)}kgs باید باشد.`
+            const idealMNot = 'Your BMI indicates that you are not an ideal weight.'
+            idealBMI.innerText = `${idealMNot} Your ideal weight should be between ${minBMI.toFixed(1)}kgs. - ${maxBMI.toFixed(1)}kgs.`
 			document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 4 4) 0%, rgb(81 1 1) 100%)";
         }
         topBMI.style.display = "block";
@@ -96,12 +96,12 @@ function calculateBMI_Imperial() {
         const maxBMI = 24.9 * (imeprH * imeprH) / 6.35;
         resultElement.innerText = bmi.toFixed(1);
         if(bmi >= 18.5 && bmi <= 24.9){
-            const idealM = 'BMI شما نشان می دهد که وزن مناسبی دارید.'
-            idealBMI.innerText = `${idealM} وزن ایده آل شما بین ${minBMI.toFixed(1)}st. - ${maxBMI.toFixed(1)}st باید باشد.`
+            const idealM = 'Your BMI indicates that you are at a healthy weight.'
+            idealBMI.innerText = `${idealM} Your ideal weight should be between ${minBMI.toFixed(1)}st. - ${maxBMI.toFixed(1)}st.`
         }
         else {
-            const idealMNot = 'BMI شما نشان می دهد که وزن مناسبی ندارید.'
-            idealBMI.innerText = `${idealMNot} وزن ایده آل شما بین ${minBMI.toFixed(1)}st. - ${maxBMI.toFixed(1)}st باید باشد.`
+            const idealMNot = 'Your BMI indicates that you are not an ideal weight.'
+            idealBMI.innerText = `${idealMNot} Your ideal weight should be between ${minBMI.toFixed(1)}st. - ${maxBMI.toFixed(1)}st.`
         }
         topBMI.style.display = "block";
         idealBMI.style.display = "block";
