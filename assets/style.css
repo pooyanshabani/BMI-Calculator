@@ -14,7 +14,7 @@
 body {
   scroll-behavior: smooth;
   background: var(--White);
-  direction: rtl;
+  direction: ltr;
   font-family: iranyekan;
 }
 a {
@@ -35,16 +35,17 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 737px;
   position: relative;
   border-radius: 0px 0px 35px 35px;
-  background: linear-gradient(290deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%);
-  margin-right: 24px;
+  background: linear-gradient(
+47deg, #d6e6fe 0%, rgba(214, 252, 254, 0) 100%);
+  margin-left: 24px;
   box-sizing: border-box;
   z-index: 1;
-  direction: rtl;
+  direction: ltr;
 }
 .hero_wrap .hero_intro {
   display: flex;
   flex-direction: column;
-  padding-right: 116px;
+  padding-left: 116px;
 }
 .hero_wrap .hero_intro img {
   margin: 75px 0 100px 0;
@@ -74,10 +75,10 @@ input[type="number"]::-webkit-outer-spin-button {
   position: absolute;
   z-index: 2;
   top: 60%;
-  right: 60%;
-  transform: translate(-18%, -50%);
+  left: 60%;
+  transform: translate(18%, -50%);
   box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
-  direction: rtl;
+  direction: ltr;
 }
 .hero_wrap .bmi_calculator form {
   display: flex;
@@ -190,7 +191,7 @@ input[type="number"]::-webkit-outer-spin-button {
   color: #5e6e85;
 }
 .hero_wrap .bmi_calculator form .stats div input {
-  padding: 20px 24px 20px 100px;
+  padding: 20px;
   border-radius: 12px;
   border: 1px solid #d8e2e7;
   box-shadow: none;
@@ -211,7 +212,7 @@ input[type="number"]::-webkit-outer-spin-button {
   line-height: normal;
   letter-spacing: -1.2px;
   top: 50px;
-  right: 140px;
+  left: 100px;
 }
 .hero_wrap .bmi_calculator form .stats div .kg {
   position: absolute;
@@ -221,7 +222,7 @@ input[type="number"]::-webkit-outer-spin-button {
   line-height: normal;
   letter-spacing: -1.2px;
   top: 50px;
-  right: 140px;
+  left: 100px;
 }
 .hero_wrap .bmi_calculator form .stats div input:focus,
 .hero_wrap .bmi_calculator form .stats div input:hover {
@@ -312,8 +313,8 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 32px;
   align-items: center;
   background: linear-gradient(135deg, #04c3c4 0%, #006c6d 100%);
-  border-radius: 999px 156px 156px 999px;
-  direction: rtl;
+  border-radius: 150px 1000px 1000px 150px;
+  direction: ltr;
 }
 .hero_wrap .bmi_calculator .result_output .wrap_result #welcome {
   color: var(--White);
@@ -779,8 +780,8 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    left: 6px;
-    right: auto;
+    right: 6px;
+    left: auto;
     line-height: 1.4;
 }
 
@@ -803,8 +804,8 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    left: 6px;
-    right: auto;
+    right: 6px;
+    left: auto;
     line-height: 1.4;
 }
 
