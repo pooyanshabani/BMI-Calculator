@@ -1,7 +1,19 @@
-# BMI-Calculator
-BMI Calculator U-Fitpro
+# 🚀 Live Demo
 
-to Online preview [click here](https://u-fitpro.com/bmi/).
+👉 https://pooyanshabani.github.io/BMI-Calculator/
 
+---
 
-[![pooyanshabani](/images/u-fitpro-bmi.jpg)](https://u-fitpro.com/bmi/)
+## Screenshots
+
+(Images)
+
+---
+
+## Features
+
+- BMI Calculator
+- Animated Gauge
+- Responsive Design
+- Pure JavaScript
+- Mobile Friendly
