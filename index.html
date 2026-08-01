@@ -151,14 +151,14 @@
           </form>
           <div class="result_output" id="result_outputbg">
             <div class="wrap_result">
-              <p id="welcome">خوش آمدید</p>
+              <p id="welcome">Welcome</p>
 			    
               <p id="top_bmi"></p>
-              <p id="best_bmi">محدوده BMI سالم: 18.5 الی 25</p>
+              <p id="best_bmi">Healthy BMI range: 18.5 to 25</p>
               
               <p id="result"></p>
               <p id="welcome_more">
-                قد و وزن خود را وارد کنید و نتیجه BMI را درمشاهده کنید.
+              	 Enter your height and weight and see your BMI result.
               </p>
 			  <div id="preview-textfield"></div>
             </div>
@@ -276,22 +276,22 @@ function updateGauge() {
       rmainbmi = Math.round(mainbmi * 100)/100;
 
 	  if (rmainbmi < 16) {	  
-		  rcalgw = 'شما باید ' + Math.round( (rminBMI - weight) * 10)/10 + ' کیلوگرم به وزن خود اضافه کنید.';
+		  rcalgw = 'You need to add ' + Math.round( (rminBMI - weight) * 10)/10 + ' kilograms to your weight.';
 		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 4 4) 0%, rgb(81 1 1) 100%)";
 	  } else if (rmainbmi >= 16 && rmainbmi < 18.5) {
-		  rcalgw = 'شما باید ' + Math.round( (rminBMI - weight) * 10)/10 + ' کیلوگرم به وزن خود اضافه کنید.';
+		  rcalgw = 'You need to add ' + Math.round( (rminBMI - weight) * 10)/10 + ' kilograms to your weight.';
 		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 151 4) 0%, rgb(111 48 0) 100%)";
 		  
 	  } else if (rmainbmi >= 25 && rmainbmi < 35) {
-		  rcalgw = 'شما باید ' + Math.round( (weight - rmaxBMI) * 10)/10 + '  کیلوگرم وزن خود را کاهش دهید.';
+		  rcalgw = 'You need to lose ' + Math.round( (weight - rmaxBMI) * 10)/10 + ' kilograms.';
 		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 151 4) 0%, rgb(111 48 0) 100%)";
 		  
 	  } else if (rmainbmi >= 35) {
-		  rcalgw = 'شما باید ' + Math.round( (weight - rmaxBMI) * 10)/10 + '  کیلوگرم وزن خود را کاهش دهید.';
+		  rcalgw = 'You need to lose ' + Math.round( (weight - rmaxBMI) * 10)/10 + ' kilograms.';
 		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(197 4 4) 0%, rgb(81 1 1) 100%)";
 		  
 	  } else {
-		  rcalgw = 'نسبت وزن و قد شما در محدوده سالم قرار دارد.';
+		  rcalgw = 'Your weight and height ratio is within a healthy range.';
 		  document.getElementById("result_outputbg").style.background = "linear-gradient(135deg, rgb(9, 149, 0) 0%, rgb(0, 108, 109) 100%)";
 	  
 	  }
@@ -299,7 +299,7 @@ function updateGauge() {
 	  document.getElementById("preview-textfield").style.display = 'none';
       document.getElementById("w_canvas").style.display = 'flex';
 	  top_bmi.innerText = `نتیجه BMI شما: ${rmainbmi}`;
-	  best_bmi.innerHTML = 'محدوده BMI سالم: 18.5 الی 25 <br>' + 'وزن سالم برای قد شما بین '  + rminBMI + ' و ' + rmaxBMI + ' کیلوگرم می باشد. <br> ' + rcalgw;
+	  best_bmi.innerHTML = 'Healthy BMI range: 18.5 to 25 <br>' + 'A healthy weight for your height is between ' + rminBMI + ' and ' + rmaxBMI + ' kilograms. <br> ' + rcalgw;
 	
 	  gauge.set(bmi); // set actual value
 	  document.getElementById("welcome").style.display = 'none';
